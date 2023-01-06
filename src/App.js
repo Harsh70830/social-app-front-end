@@ -16,16 +16,18 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
-          {user ? <Home /> : <Register />}
-        </Route>
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
-        <Route path="/register">
-          {user ? <Redirect to="/" /> : <Register />}
-        </Route>
-        <Route path="/profile/:username">
-          <Profile />
-        </Route>
+        <Router exact path="/">
+        <Home/>
+        </Router>
+        <Router path="/login">
+        <Login/>
+        </Router>
+        <Router path="/register">
+        <Register/>
+        </Router>
+        <Router path="/profile/:username">
+        <Profile/>
+        </Router>
       </Switch>
     </Router>
   );
