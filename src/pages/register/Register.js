@@ -22,7 +22,7 @@ export default function Register() {
       };
       try {
         await axios.post("/auth/register", user);
-        history.push("/auth/login");
+        history.push("/login");
       } catch (err) {
         console.log(err);
       }
